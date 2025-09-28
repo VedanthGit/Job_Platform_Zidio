@@ -7,22 +7,41 @@ The backend exposes a REST API for managing jobs, employees, recruiters, applica
 ---
 
 ## ⚡ Features
-- User authentication & role-based access (Admin, Employee, Recruiter).
-- CRUD APIs for Employees, Recruiters, Job Posts, and Applications.
-- File uploads (resume, certificates, invoices).
-- Subscription & Payment tracking with invoice generation.
-- System audit logs for tracking activities.
-- Analytics dashboard APIs.
-- Email notifications (for communication & updates).
+- **Authentication & Authorization** → Role-based access (Admin, Employee, Recruiter) using Spring Security + JWT.
+- **CRUD APIs** → for Employees, Recruiters, Job Posts, and Applications.
+- **Microservices-ready** → Uses Spring Cloud Config Server + Eureka Service Discovery.
+- **File Handling** → Upload resumes, certificates, invoices (Cloudinary + Thumbnailator).
+- **Subscription & Payment Tracking** → Invoice generation via iTextPDF.
+- **System Audit Logs** → Track user and system activities.
+- **Analytics Dashboard APIs** → For insights & reporting.
+- **Email Notifications** → Integrated with Spring Mail.
 
----
+--
 
 ## 🛠️ Tech Stack
-- **Java 17/21**
-- **Spring Boot** (REST, Security, JPA)
-- **MySQL** (Database)
-- **Maven** (Build tool)
-- **Postman** (API testing)
+- **Language** → Java 17 (upgradable to 21)
+- **Framework** →
+  - Spring Boot Starter Web (REST APIs)
+  - Spring Boot Starter Data JPA (Hibernate ORM + MySQL)
+  - Spring Boot Starter Security (Authentication & Authorization)
+  - Spring Boot Starter Validation (Request validation)
+  - Spring Boot Starter Mail (Email service)
+  - Spring Boot DevTools (Hot reload)
+  - Spring Boot Starter WebFlux (Reactive APIs)
+  - Spring Boot Starter Test + Spring Security Test (Testing)
+- **Spring Cloud** →
+  - Config Server + Config Client
+  - Netflix Eureka Server + Eureka Client (Service Discovery)
+- **Database** → MySQL + JPA
+- **Authentication** → JWT (io.jsonwebtoken)
+- **File & Media Handling** →
+  - Cloudinary SDK (Media storage)
+  - Thumbnailator (Image processing)
+  - Apache Commons IO (File utilities)
+  - iTextPDF (Invoice generation)
+- **Networking** → Reactor Netty, Jersey REST client
+- **Build Tool** → Maven (Spring Boot Maven Plugin)
+- **Testing Tool** → Postman (API Testing)
 
 ---
 
@@ -251,4 +270,5 @@ src/main/java/com/example/job_platform
  ├── Repository      # Spring Data JPA repositories  
  ├── Service         # Business logic services  
  └── Security        # Security, JWT, config  
+
 
