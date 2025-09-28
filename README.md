@@ -66,6 +66,76 @@ mvn spring-boot:run
 
 ---
 
+## ⚙️ Setup & Installation
+
+### 🚀 Create Project with Spring Initializr
+
+You can generate this project using Spring Initializr or directly via your IDE (IntelliJ IDEA / Eclipse / VS Code).
+
+### 1. Go to Spring Initializr
+👉 ```https://start.spring.io/```
+
+---
+
+### 2. Project Settings
+- **Project:** Maven
+- **Language:** Java
+- **Spring Boot Version:** 2.7.15 (or latest LTS compatible with Java 17/21)
+- **Project Metadata:**
+  - **Group:** ```com.example```
+  - **Artifact:** ```job_platform```
+  - **Name:** ```job_platform```
+  - **Package:** ```com.example.job_platform```
+- **Java Version:** 17 (can also upgrade to 21 later)
+
+---
+
+### 2. Select Dependencies
+- **Spring Boot Starts:**
+  - Spring Web
+  - Spring Data JPA
+  - Spring Security
+  - Validation
+  - Spring Boot DevTools
+  - Spring Boot Test
+
+- **Database:** MySQL Driver
+- **Cloud:**
+  - Spring Cloud Config Server
+  - Spring Cloud Config Client
+  - Eureka Server
+  - Eureka Discovery Client
+
+- **other:**
+  - **Spring Mail**
+  - **Webflux (for reactive APIs)**
+⚡ After generation, you’ll get a ZIP → unzip it and open in your IDE.
+
+---
+
+### 4. Import as Maven Project
+- Open your IDE(IntelliJ/Eclipse).
+- Select **Import Project → Maven**.
+- Point to the unzipped folder.
+- Maven will automatically download all dependencies from ```pom.xml```.
+
+---
+
+### 5. Run the Application
+- **Use Maven Wrapper**
+```bash
+./mvnw spring-boot:run
+```
+- **Or using Maven directly:**
+```bash
+mvn spring-boot:run
+```
+
+**The server will start at:**
+👉 ``` http://localhost:8080 ```
+
+---
+
 ## 📬 API Endpoints (Test with Postman)
 Here are some key endpoints (all responses are JSON):
 
@@ -181,3 +251,4 @@ src/main/java/com/example/job_platform
  ├── Repository      # Spring Data JPA repositories  
  ├── Service         # Business logic services  
  └── Security        # Security, JWT, config  
+
